@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hide Password</title>
+</head>
+<body>
+
+    <h2> 🫣 </h2>
+
+    <input type="password" id="password" placeholder="Enter Password">
+
+    <button onclick="togglePassword()">😶‍🌫️</button>
+
+    <script>
+        function togglePassword() {
+            var password = document.getElementById("password");
+
+            if (password.type === "password") {
+                password.type = "text";
+            } else {
+                password.type = "password";
+            }
+        }
+    </script>
+
+</body>
+</html>

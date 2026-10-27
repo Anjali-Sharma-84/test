@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <form id="productForm">
+        <input id="name" placeholder="Product Name">
+        <input id="price" type="number" placeholder="Price">
+        <input id="quantity" type="number" placeholder="Quantity">
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById("productForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+            const price = Number(document.getElementById("price").value);
+            const quantity = Number(document.getElementById("quantity").value);
+
+            if (name === "" || price <= 0 || quantity <= 0) {
+                alert("Enter valid product details");
+                return;
+            }
+
+            const product = { name, price, quantity };
+            localStorage.setItem("product", JSON.stringify(product));
+
+            alert("Product saved successfully");
+        });
+    </script>
+</body>
+</html>
